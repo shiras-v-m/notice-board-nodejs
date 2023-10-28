@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea id="contentTxt" style="width: 100%;"></textarea>
+    <button id="sendBtn">Update board</button>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    // This is necessary for connecting to the server
+    const socket=io()
+
+    sendBtn.addEventListener("click",()=>{
+        console.log("button clicked");
+        let txt=contentTxt.value
+
+        // Send message to the server
+        socket.emit("message",txt)
+    })
+</script>
+</body>
+
+</html>
